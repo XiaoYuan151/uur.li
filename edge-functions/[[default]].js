@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+export const onRequestGet = async ({ request, env }) => {
   const url = new URL(request.url);
   const shortCode = url.pathname.split("/").filter(Boolean)[0];
   const defaultUrl = await LINK_DB.get("default");
@@ -11,7 +11,4 @@ async function handleRequest(request) {
   } else {
     return Response.redirect(defaultUrl, 301);
   }
-}
-addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
-});
+};
