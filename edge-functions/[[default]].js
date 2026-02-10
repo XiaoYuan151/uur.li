@@ -1,7 +1,7 @@
 export const onRequestGet = async ({ request, env }) => {
   const url = new URL(request.url);
-  const shortCode = url.pathname.split("/").filter(Boolean)[0];
   const defaultUrl = await LINK_DB.get("default");
+  const shortCode = url.pathname.split("/").filter(Boolean)[0];
   if (!shortCode) {
     return Response.redirect(defaultUrl, 301);
   }

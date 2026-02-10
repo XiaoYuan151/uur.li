@@ -4,6 +4,11 @@
   "outputDirectory": "./public",
   "redirects": [
     {
+      "source": "/",
+      "destination": "/default",
+      "statusCode": 301
+    },
+    {
       "source": "/favicon.ico",
       "destination": "/favicon.png",
       "statusCode": 301
